@@ -1,10 +1,13 @@
 ---
 layout: post
-title:  "Hello World"
+title:  "hello world"
 date:   2024-02-04 00:43:20 -0600
 categories: testing coding web_dev
+
+description: "test post; please ignore"
+date_edited: 2024-02-04 10:33:00 -0600
 ---
-Hello reader! This post just exists as testing data for the basic functionality of the website. Part of this testing includes seeing if my markdown text is being converted to HTML code, so I’ll need to have some sections in this post.
+Hello! This post just exists as testing data for the basic functionality of the website. Part of this testing includes seeing if my markdown text is being converted to HTML code, so I’ll need to have some sections in this post.
 
 ## what is this?
 

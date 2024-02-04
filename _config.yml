@@ -54,3 +54,7 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+theme_config:
+  back_home_text: ".." # customize text for homepage link in post layout
+  date_format: "%-d %B %Y" # customize how date is formatted

@@ -1,0 +1,11 @@
+{% if site.posts.size > 0 %}
+  <ul id="post_list">
+    {% for post in site.posts %}
+      <li class="post_infobox">
+        <a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
+        <p class="post_description"> {{ post.description }}</p>
+        <p> {{ post.date | date: site.theme_config.date_format }} </p>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

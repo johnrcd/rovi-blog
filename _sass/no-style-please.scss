@@ -1,9 +1,12 @@
+$text-color-main: rgb(215, 215, 215);
+$text-color-quiet: rgb(215, 215, 215, 0.6);
+
 body {
     background: #17181a;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    color: rgb(215, 215, 215);
+    color: $text-color-main;
     font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -18,8 +21,13 @@ body {
     line-height: 1.5rem;
 }
 
+// text selection/ mouse drag click over text
+::selection {
+    background: rgba(133, 241, 255, 0.25);
+}
+
 .wrapper {
-    width: fit-content;
+    width: 100%;
     max-width: 640px;
     margin: 4rem auto;
     padding: 0 1rem;
@@ -27,7 +35,11 @@ body {
 
 h1, h2, h3, h4, h5, h6 { line-height: 2rem; }
 
-h1#site_title {font-size: 3.5rem;}
+h1#site_title {
+    font-size: 3.5rem;
+    width: 100%;
+    text-align: center;
+}
 
 h1 { font-size: 2.00rem;}
 h2 { font-size: 1.75rem;}
@@ -35,6 +47,15 @@ h3 { font-size: 1.50rem;}
 h4 { font-size: 1.25rem;}
 h5 { font-size: 5rem;}
 h6 { font-size: 5rem;}
+
+a {
+    color: $text-color-quiet;
+    text-decoration: none;
+}
+
+a:hover{
+    color: $text-color-main;
+}
 
 hr {
     text-align: center;
@@ -48,3 +69,52 @@ table, th, td {
     border: thin solid black;
     border-collapse: collapse;
 }
+
+// div#post_header {}
+    div#post_header p{ 
+        opacity: 0.7;
+        margin: 0;
+    }
+
+div#post_footer {
+    width: 100%;
+    padding: auto;
+    text-align: center;
+}
+    div#post_footer a{
+        display: inline;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+ul#post_list {
+    list-style-type: none;
+    padding: 0;
+}
+    ul#post_list li:not(:last-child){
+        padding: 10px 0;
+        margin: 0;
+        border-bottom: 2px solid rgb(51, 51, 51);
+    }
+    ul#post_list li h3,
+    ul#post_list li p,
+    ul#post_list li a{
+        padding: 0.125rem 10px;
+        margin: 0;
+    }
+
+    ul#post_list li p.post_description{
+        color: $text-color-quiet;
+    }
+
+    ul#post_list li a{
+        color: $text-color-main;
+        opacity: 1;
+        padding: 0;
+        margin: 0;
+    }
+
+    ul#post_list li a:hover{
+        text-decoration:underline;
+    }
+
