@@ -4,7 +4,6 @@ title:  "Hello World"
 date:   2024-02-04 00:43:20 -0600
 categories: testing coding web_dev
 ---
-# Hello World
 Hello reader! This post just exists as testing data for the basic functionality of the website. Part of this testing includes seeing if my markdown text is being converted to HTML code, so I’ll need to have some sections in this post.
 
 ## what is this?
@@ -16,9 +15,10 @@ At least, that’s what I’m thinking of this as. The issue is that I have no i
 ## topics
 
 There’s a few things that I might cover here:
-games i’ve worked on or am working on
-music stuff
-random code stuff
+
+- games i’ve worked on or am working on
+- music stuff
+- random code stuff
 
 Basically, projects I’m working on. I like talking about the behind the scenes of stuff I’m working on, but it turns out that YouTube descriptions and randomly yapping to my friends about games isn’t ideal. A blog might not be either, but I like the idea of looking back on this and seeing what I was talking about.
 
