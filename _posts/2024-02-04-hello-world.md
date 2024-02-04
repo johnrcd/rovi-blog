@@ -2,7 +2,6 @@
 layout: post
 title:  "hello world"
 date:   2024-02-04 00:43:20 -0600
-categories: testing coding web_dev
 
 description: "test post; please ignore"
 date_edited: 2024-02-04 10:33:00 -0600
