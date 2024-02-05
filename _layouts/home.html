@@ -1,12 +1,6 @@
 ---
 layout: default
 ---
-<header>
-  <h1 id="site_title">{{ site.title }}</h1>
-  {% if site.theme_config.show_description == true %}
-    <p>{{ site.description }}</p>
-  {% endif %}
-</header>
+{% include header.html %}
 
-{% include menu_item.html collection=site.data.menu.entries %}
-{% include post_list.html %}
+{{ content }}

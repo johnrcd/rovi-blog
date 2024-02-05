@@ -1,5 +1,5 @@
 $text-color-main: rgb(215, 215, 215);
-$text-color-quiet: rgb(215, 215, 215, 0.6);
+$text-color-quiet: rgb(215, 215, 215, 0.7);
 
 body {
     background: #17181a;
@@ -27,19 +27,12 @@ body {
 }
 
 .wrapper {
-    width: 100%;
     max-width: 640px;
     margin: 4rem auto;
     padding: 0 1rem;
 }
 
 h1, h2, h3, h4, h5, h6 { line-height: 2rem; }
-
-h1#site_title {
-    font-size: 3.5rem;
-    width: 100%;
-    text-align: center;
-}
 
 h1 { font-size: 2.00rem;}
 h2 { font-size: 1.75rem;}
@@ -69,6 +62,20 @@ table, th, td {
     border: thin solid black;
     border-collapse: collapse;
 }
+
+h1#site_title {
+    font-size: 4rem;
+    width: 100%;
+    text-align: center;
+}
+    h1#site_title a {
+        color: $text-color-quiet;
+        text-decoration:none;
+    }
+
+    h1#site_title a:hover{
+        color: $text-color-main;
+    }
 
 // div#post_header {}
     div#post_header p{ 
@@ -118,3 +125,16 @@ ul#post_list {
         text-decoration:underline;
     }
 
+nav#header_navigation ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    nav#header_navigation ul li{
+        margin: 0 10px;
+        display: inline;
+    }

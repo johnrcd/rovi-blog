@@ -31,9 +31,10 @@ github_username:  john_rcd
 
 # Build settings
 # theme: minima
-theme: no-style-please
+# theme: no-style-please
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -58,3 +59,13 @@ plugins:
 theme_config:
   back_home_text: ".." # customize text for homepage link in post layout
   date_format: "%-d %B %Y" # customize how date is formatted
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      description: "[no description provided]"
+
+

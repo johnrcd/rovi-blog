@@ -1,0 +1,14 @@
+<header>
+    <h1 id="site_title"><a href="/">{{ site.title }}</a></h1>
+    {% if site.theme_config.show_description == true %}
+      <p>{{ site.description }}</p>
+    {% endif %}
+    <nav id="header_navigation">
+      <ul>
+          <li><a href="/about">about</a></li>
+          <li><a href="/posts">posts</a></li>
+          <li><a href="/contact">contact</a></li>
+      </ul>
+    </nav>
+</header>
+  
