@@ -30,9 +30,8 @@ twitter_username: john_rcd
 github_username:  john_rcd
 
 # Build settings
-# theme: minima
+theme: minima
 # theme: no-style-please
-remote-theme: no-style-please
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
