@@ -9,7 +9,7 @@ permalink:
     <h2>Latest Posts:</h2>
     {% for post in site.posts limit:3 %}
       <li class="post_infobox">
-        <a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
+        <a href="{{ site.baseurl }}{{ post.url }}"><h3>{{ post.title }}</h3></a>
         <p class="post_description"> {{ post.description }}</p>
         <p> {{ post.date | date: site.theme_config.date_format }} </p>
       </li>
