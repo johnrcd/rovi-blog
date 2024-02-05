@@ -15,7 +15,6 @@ github_username:  john_rcd
 
 # Build settings
 theme: minima
-# theme: no-style-please
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
