@@ -42,7 +42,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: https://rovidecena.com/blogs #${{ steps.deployment.outputs.page_url }}
+      url: https://rovidecena.com/blog #${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
