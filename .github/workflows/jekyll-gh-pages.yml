@@ -46,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+        uses: actions/deploy-pages@v4
       - name: Deploy to GitHub Pages
         id: deployment
         working-directory: ./rovi_blog
-        uses: actions/deploy-pages@v4
