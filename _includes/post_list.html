@@ -2,7 +2,7 @@
   <ul id="post_list">
     {% for post in site.posts %}
       <li class="post_infobox">
-        <a href="{{ site.baseurl }}{{ post.url }}"><h3>{{ post.title }}</h3></a>
+        <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}"><h3>{{ post.title }}</h3></a>
         <p class="post_description"> {{ post.description }}</p>
         <p> {{ post.date | date: site.theme_config.date_format }} </p>
       </li>
