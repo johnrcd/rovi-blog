@@ -60,9 +60,23 @@ hr {
     &:after { content: attr(data-content) '/////' }
 }
 
+// solution from Andrew Wei
+// https://stackoverflow.com/a/30366422
+
+// kind of hacky
+// not super big on the em tag but it looks nice in markdown so w/e
+img + em {
+    color: $text-color-quiet;
+}
+
+
 table, th, td {
     border: thin solid black;
     border-collapse: collapse;
+}
+
+img {
+    width: 100%;
 }
 
 h1#site_title {
@@ -81,7 +95,7 @@ h1#site_title {
 
 // div#post_header {}
     div#post_header p{ 
-        opacity: 0.7;
+        color: $text-color-quiet;
         margin: 0;
     }
 
@@ -140,3 +154,8 @@ nav#header_navigation ul{
         margin: 0 10px;
         display: inline;
     }
+
+a.arrow_on_hover:hover{
+    color: $text-color-main;
+    &:before { content: '> ' }
+}
