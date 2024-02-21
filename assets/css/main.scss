@@ -1,7 +1,7 @@
 ---
 ---
 $text-color-main: rgb(215, 215, 215);
-$text-color-quiet: rgb(150, 150, 150);
+$text-color-quiet: rgb(170, 170, 170);
 
 body {
     background: #17181a;
@@ -45,11 +45,12 @@ h6 { font-size: 5rem;}
 
 a {
     color: $text-color-quiet;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 a:hover{
     color: $text-color-main;
+    text-decoration: underline;
 }
 
 hr {
@@ -86,11 +87,21 @@ h1#site_title {
 }
     h1#site_title a {
         color: $text-color-quiet;
-        text-decoration:none;
+        text-decoration: none;
     }
 
     h1#site_title a:hover{
         color: $text-color-main;
+        text-decoration: none;
+    }
+
+a.header_link {
+    color: $text-color-quiet;
+    text-decoration: none;
+}
+    a.header_link:hover {
+        color: $text-color-main;
+        text-decoration: none;
     }
 
 // div#post_header {}
@@ -108,6 +119,7 @@ div#post_footer {
         display: inline;
         text-align: center;
         margin: 0 auto;
+        text-decoration: none;
     }
 
 ul#post_list {
@@ -124,6 +136,7 @@ ul#post_list {
     ul#post_list li a{
         padding: 0.125rem 10px;
         margin: 0;
+        text-decoration: none;
     }
 
     ul#post_list li p.post_description{
@@ -135,6 +148,7 @@ ul#post_list {
         opacity: 1;
         padding: 0;
         margin: 0;
+        text-decoration: none;
     }
 
     ul#post_list li a:hover{
@@ -155,7 +169,12 @@ nav#header_navigation ul{
         display: inline;
     }
 
-a.arrow_on_hover:hover{
-    color: $text-color-main;
-    &:before { content: '> ' }
+a.arrow_on_hover {
+    text-decoration: none;
 }
+    a.arrow_on_hover:hover{
+        color: $text-color-main;
+        text-decoration: none;
+        &:before { content: '> ' }
+    }
+

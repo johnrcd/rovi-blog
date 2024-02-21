@@ -8,12 +8,12 @@ description: the game that never was
 # date_edited: 2024-02-07 19:06:00 -0600
 ---
 
-![]({{ site.url }}{{ site.baseurl }}/assets/images/ascension/ascension_city_of_decay.png)
-*concept art: Ascension, the City of Decay*
+![concept art of Ascension]({{ site.url }}{{ site.baseurl }}/assets/images/my_games/ascension_city_of_decay.png)
+*concept art*
 
 Ascension was the name of a game that I worked on between April 2022 and September 2023. It was a retro-inspired side scroller about a living being falling into the world of souls. The concept wasn’t particularly creative, and the gameplay wasn’t going to be groundbreaking, but I thought that with a little bit of love and a lot of time, I could make something that was pretty good.
 
-As with a lot of games, it never got finished, only the first world being completed before I scrapped it.
+As with a lot of projects I've worked on, it never got completed. Only one world was finished before it was scrapped.
 
 ## why this?
 
@@ -25,9 +25,10 @@ It probably makes a bit more sense to talk about something I've already released
 
 ## game overview
 
-As with a lot of my game ideas, it started with a game mechanic.
+Ascension's initial idea came when I played [Shotgun King: The Final Checkmate](https://punkcake.itch.io/shotgun-king), an entry in the Ludum Dare 50 game jam. The game made you play as a black king chess piece equipped with a shotgun, defeating waves of other chess pieces. At the end of each wave, the player would be given a few pairs of cards to choose from. One card in the pair would buff the player, but the other would buff the board, usually by adding new pieces.
 
-Ascension's initial idea came when I played Shotgun King, an entry in the Ludum Dare 50 game jam. The game made you play as a black king chess piece equipped with a shotgun, defeating waves of other chess pieces. At the end of each wave, the player would be given a few pairs of cards to choose from. One card in the pair would buff the player, but the other would buff the board, usually by adding new pieces.
+![screenshot from shotgun king's press kit, displaying an example of two possible card pairs you could get at the end of a wave.]({{ site.url }}{{ site.baseurl }}/assets/images/other_games/shotgun_king_press_kit_screen_5.png)
+*An example of two possible card pairs you could get at the end of a wave in Shotgun King.*
 
 I thought this system was pretty fun, and I got addicted to the game for a few days. The risk and reward that came from each card pair made upgrades a decision I had to think a bit more deeply about -- deciding what type of upgrades I wanted to focus on, figuring out what new chess pieces would screw me over later on and avoiding them, etc. 
 
@@ -35,11 +36,9 @@ Ascension's initial idea was to use a similar risk-reward card upgrade system in
 
 At least, that was the original idea.
 
-### there's a story??
+### story
 
-Story isn't really something I consider when coming up with game ideas, but my plans for Ascension became big enough where it would've been pretty awkward for the player if they were walking around with no endgoal in mind.
-
-Ascension took place in a world I called Voidspace; a hidden dimension categorized by the floating islands and geometry floating around, seemingly held by nothing. Voidspace acted as a prison for souls -- a crumbling world that held no way out for those unfortunate enough to find themselves there. The never ending passage of time rendered most of the inhabitants mindless, their bodies deformed due to some force within Voidspace.
+Ascension took place in a world called Voidspace (internally, anyways); a hidden dimension categorized by the floating islands and geometry floating around, seemingly held by nothing. Voidspace acted as a prison for souls -- a crumbling world that held no way out for those unfortunate enough to find themselves there. The never ending passage of time rendered most of the inhabitants mindless, their bodies deformed due to some force within Voidspace.
 
 Players would've play as Biscuit -- one of the first people to arrive in Voidspace in a long time. Though the world itself seems to be out to get him, with souls rushing him down when they see him, he lives long enough to learn about a location known as the Ascension Point -- the highest spot in Voidspace, rumoured to house the only chance of escape.
 
@@ -65,7 +64,7 @@ As the game progresses, you'd get the oppertunity to talk with Spectre. He's mos
  
 ### character component system
 
-The majority of development was focused on something I called the character component system – CCS for short. I’m trying to write posts to be readable for non-programmers/musicians/[insert technical field i will or have posted about], but this section may be a little difficult to translate, so bear with me.
+The majority of development was focused on something I called the character component system – which I will refer to as "CCS" for short. I’m trying to write posts to be readable for non-programmers/musicians/[insert technical field i will or have posted about], but this section may be a little difficult to translate, so bear with me.
 
 Most of my programming experience had been from beginner Unity engine tutorials, and it turns out that it wasn’t the best way to create decent code. The main thing that I thought about was trying to reduce the amount of “unique” components; instead of creating a PlayerMovement, ZombieMovement, and SkeletonMovement component, I’d just make a GroundMovement component that would handle all three.
 
@@ -90,11 +89,53 @@ Of course, actually developing this project made me realize that having all thes
 
 ### enemy design
 
+### linear vs non-linear levels
+
 ### boss design
 
-The bosses were awkward to implement because the whole concept of Abilities and Attacks being separate things from each other. Turns out, instead of thinking of bosses as having Abilities and Attacks that they activated separately, it makes more sense to think of bosses as having moves that they execute depending on the state of the fight. My solution was to allow attacks to activate abilities, and if needed, have abilities that activated other abilities. It was pretty hacky, but it worked well enough for the most part.
+Implementing bosses ended up being a decent challenge because I had to work around the whole "ability, attack, movement" trifecta that CCS was designed around. When designing bosses, I focused on what "moves" they had; the separate actions that they had at their disposal. The issue was that abilities and attacks were treated as different sytems within characters and could activate/deactivate without caring about the other system, which wasn't really how I wanted to plan out the bosses.
+
+(I also don't think that most developers would ever design a boss like that, but I'm not really a designer so I don't know.)
+
+My solution was pretty straight forward -- use attacks for everything.
+
+I wanted to design the bosses around a moveset, while still maintaining the attack/ability system split, so I had to choose one system to take priority. Attack was the clear option simply due to how Ascension's animation system worked. Essentially, characters could only displayed by a single sprite. Movement animations played by default, which were overriden by ability animations if an ability was active, which was then overriden by attack animations if the character was attacking. Using the Attack system made sense just to avoid any animation conflicts from displaying.
+
+For attacks that used movement abilities, I just had attacks activate the abilities themselves, rather than the normal method where the character's AI.
 
 The whole character component system seems sort of half-baked in retrospect but it got me to start thinking of code modularity; having one class do one thing.
+
+So, who were the bosses?
+
+#### Galar -- The Vanguard Commander
+
+The first boss you encounter is Galar, a knight for the once prosperous monarchy in Voidspace. You meet him when you enter a passage to grant you access to a walled off city. Though a crumbling mess of his old self, he remembers his duties, and appears before you, blocking your passage, axe in hand.
+
+![player and galar inside galar's boss arena]({{ site.url }}{{ site.baseurl }}/assets/images/my_games/ascension_galar.png)
+*Boss arena of Galar, with the player in view.*
+
+Galar's main purpose design-wise was to ensure that you had a solid foundation in combat. He's the first enemy in the game to have a weapon, and he's able to really threaten you because of it. One way I hammered this home was ensuring his first (and one of his more common) attack was his Slam -- an overhead axe swing. It was clearly telegraphed, but it would absolutely punish you if you decided to ignore it, hitting you for a quarter of your health and knocking you back significantly.
+
+While Galar hits harder than a regular enemy, he's actually quite slow to give players chance room to breathe. This gets mitigated when he's down to two-thirds of health, where he switches to his phase two attacks. One of these is his Summon ability, which summons three flying enemies. As with the nature of the game, they aren't particularly threatening alone, but letting Galar spawn waves of enemies without finishing off the ones basically guarentees you'll get a big chunk of your health picked off.
+
+(Part of the reason I added the Summon ability was to have an easy way to add to a boss without adding in more attack animations.)
+
+> (...but, y'know -- it's also pretty fun.)
+
+I thought Galar was a good boss. Not particularly interesting, but he was a fair fight that was a cake walk when you were comfortable with combat. My favourite move from him is his spin attack that he starts using when he's around the last third of his health -- quickly dashing towards the player, spinning his axe around his chest. It catches you off guard the first time, but it's rewarding and fun to be able to jump above it, catching him with a slash as you drop down behind him.
+
+#### Dicter -- The Champion
+
+When coming up with bosses, I thought it would be cool if all the bosses were connected in some way -- rather than being just stronger-than-normal souls.
+
+One of the ideas I had was to name the bosses after the five stages of grief, then figure it out from there. I didn't actually follow this very well -- Galar's name was Grief initially because I thought grief was one of the stages (...don't ask how), but I used it properly for the second boss.
+
+Anger.
+
+(insert Dicter image)
+
+
+#### [creature above the void] -- ???
 
 ### burnout
 Some point in developing the
