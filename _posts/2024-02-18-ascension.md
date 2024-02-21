@@ -47,20 +47,6 @@ Simple story, but good enough to serve the gameplay.
 I liked to summerize the concept as "a living being falling into the world of souls." It sounded pretty cool in my head, although I just realized that just sounds like the premise of the film Coco.
 
 Whoops.
-
-### spectre
-
-Generally, whenever game concepts grow large enough to start having a story, I typically pair the main character with a sidekick that helps them throughout their journey. I like having characters that players rely and care about, and having a buddy to help you out throughout whatever journey you're going through is a pretty easy way of doing that.
-
-In Ascension, that character was Spectre.
-
-When you first see Spectre, you'd probably think he's a relatively intimidating individual. He stands several times taller than Biscuit, floats above the ground, and is fully cloaked, hiding his appearance.
-
-In other words -- he looks like the grim reaper.
-
-The plan was to have him be a wandering traveller that would make increasinly common appearances. The player would be able to see him from a distance in the start of the game, and talk to him for the first time before the first boss, where Spectre would give you a warning, along with a tip to aid you.
-
-As the game progresses, you'd get the oppertunity to talk with Spectre. He's most commonly found at campfires he's set up, where he'll talk to you for a bit, or react to anything you have on you. This is also when you'd discover that Spectre is actually a skeleton.
  
 ### character component system
 
@@ -128,9 +114,9 @@ I thought Galar was a good boss. Not particularly interesting, but he was a fair
 
 When coming up with bosses, I thought it would be cool if all the bosses were connected in some way -- rather than being just stronger-than-normal souls.
 
-One of the ideas I had was to name the bosses after the five stages of grief, then figure it out from there. I didn't actually follow this very well -- Galar's name was Grief initially because I thought grief was one of the stages (...don't ask how), but I used it properly for the second boss.
+One of the ideas I had was to name the bosses after the five stages of grief, then figure it out from there. I didn't actually follow this very well -- Galar's name was Grief initially because I thought grief was one of the stages (...don't ask how).
 
-Anger.
+For the second boss, I chose anger.
 
 (insert Dicter image)
 
