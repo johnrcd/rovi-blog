@@ -16,6 +16,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-toc
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -48,5 +49,17 @@ defaults:
       type: "posts"
     values:
       description: "[no description provided]"
+
+# jekyll-toc settings
+toc:
+  min_level: 1
+  max_level: 5
+  list_class: toc
+  list_class: toc__list
+  sublist_class: toc__sublist
+
+kramdown:
+  footnote_backlink: ""
+  footnote_backlink_inline: true
 
 

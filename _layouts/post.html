@@ -13,7 +13,17 @@ layout: default
     <a class="arrow_on_hover" href="{{ site.url }}{{ site.baseurl }}/">go to home page</a>
     <hr />
 </div>
+
+{% if page.toc %}
+    <h4>table of contents</h4>
+    {% toc %}
+    <hr />
+{% endif %}
+
 {{ content }}
+
+<br />
+
 <div id="post_footer">
     <a class="arrow_on_hover" href="">scroll to top</a> <br/>
     <a class="arrow_on_hover" href="{{ site.url }}{{ site.baseurl }}/">go to home page</a>

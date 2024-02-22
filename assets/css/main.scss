@@ -80,6 +80,19 @@ img {
     width: 100%;
 }
 
+// https://spaceninja.com/blog/2009/how-to-avoid-paragraph-gaps-when-using-superscript-and-subscript/#:~:text=The%20browser%20shifts%20the%20super,get%20rid%20of%20the%20gaps.
+// i gotta stop using magic number solutions lol
+sup {
+    vertical-align: baseline;
+    position: relative;
+    bottom: 0.33em;
+}
+sub {
+    vertical-align: baseline;
+    position: relative;
+    bottom: -0.33em;
+}
+
 h1#site_title {
     font-size: 4rem;
     width: 100%;
@@ -178,3 +191,31 @@ a.arrow_on_hover {
         &:before { content: '> ' }
     }
 
+// kramdown footnote
+a.footnote:before {   
+    content: "[";
+    }
+    
+a.footnote:after {
+    content: "]";
+}
+
+// div.footnotes ol li{
+//     border: 1px solid $text-color-quiet;
+//     border-radius: 4px;
+//     padding: 0.5em 0.5em 0;
+// }
+
+p.reversefootnote {
+    display: inline;
+    overflow: hidden;
+}
+
+div.footnotes > ol {
+    list-style-position: outside;
+    padding-left: 1.2em; // found this on stack overflow somewhere
+}
+
+div.footnotes > ol > li {
+    padding-left: 1em;
+}

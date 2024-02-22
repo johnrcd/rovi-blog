@@ -5,6 +5,7 @@ date:   2024-02-18 14:49:00 -0600
 tags:   game_dev retrospective project music art code
 
 description: the game that never was
+toc: true
 # date_edited: 2024-02-07 19:06:00 -0600
 ---
 
@@ -22,6 +23,10 @@ I think game development is a bit brutal in the sense that sometimes, all that m
 I occasionally see people in industry post about this -- long-time developers with gaps in their work history that they can't go into because they can't talk about a game that'll never see the light of day.
 
 It probably makes a bit more sense to talk about something I've already released, just so you could try it out yourself, but... meh. Ascension isn't the most recent game project I'm working on, but it was in production for a long time, and I've always wanted to talk about it at length, so I figured it would make for a good game project retrospective.
+
+> note: I'll be leaving footnotes for topics I briefly go over but where I thought a more technical explanation would be interesting. I planned for these to be optional, and not required to understand the article.
+
+> I'll also just be putting footnotes for random stuff I find interesting.
 
 ## game overview
 
@@ -50,7 +55,9 @@ Whoops.
  
 ### character component system
 
-The majority of development was focused on something I called the character component system – which I will refer to as "CCS" for short. I’m trying to write posts to be readable for non-programmers/musicians/[insert technical field i will or have posted about], but this section may be a little difficult to translate, so bear with me.
+The majority of development was focused on something I called the character component system – which I will refer to as "CCS" for short.
+
+> (I’m trying to write posts to be readable for non-programmers/musicians, but this section may be a little difficult to translate, so bear with me.)
 
 Most of my programming experience had been from beginner Unity engine tutorials, and it turns out that it wasn’t the best way to create decent code. The main thing that I thought about was trying to reduce the amount of “unique” components; instead of creating a PlayerMovement, ZombieMovement, and SkeletonMovement component, I’d just make a GroundMovement component that would handle all three.
 
@@ -81,17 +88,51 @@ Of course, actually developing this project made me realize that having all thes
 
 Implementing bosses ended up being a decent challenge because I had to work around the whole "ability, attack, movement" trifecta that CCS was designed around. When designing bosses, I focused on what "moves" they had; the separate actions that they had at their disposal. The issue was that abilities and attacks were treated as different sytems within characters and could activate/deactivate without caring about the other system, which wasn't really how I wanted to plan out the bosses.
 
-(I also don't think that most developers would ever design a boss like that, but I'm not really a designer so I don't know.)
+> (I don't think that most developers would ever design a boss like that, but I'm not a game designer so I don't know.)
 
 My solution was pretty straight forward -- use attacks for everything.
 
-I wanted to design the bosses around a moveset, while still maintaining the attack/ability system split, so I had to choose one system to take priority. Attack was the clear option simply due to how Ascension's animation system worked. Essentially, characters could only displayed by a single sprite. Movement animations played by default, which were overriden by ability animations if an ability was active, which was then overriden by attack animations if the character was attacking. Using the Attack system made sense just to avoid any animation conflicts from displaying.
+It wouldn't be a direct issue if I kept the attack/ability system split, but I had to choose one of them to act as the primary system for a boss's moveset. Attack was the option I went for simply because the animation for characters prioritzed attacks above all else,[^animation_priority] so using Attack would prevent a boss's move from being overridden by another animation.
 
-For attacks that used movement abilities, I just had attacks activate the abilities themselves, rather than the normal method where the character's AI.
+For attacks that used movement abilities, I had the attack animations directly ask the character's ability controller to activate the desired ability.[^attack_ability_conflicts]
 
 The whole character component system seems sort of half-baked in retrospect but it got me to start thinking of code modularity; having one class do one thing.
 
 So, who were the bosses?
+
+[^animation_priority]: <details>
+        <summary> technical explanation: character animation </summary>
+        <p>
+            Character animations were treated as a separate systed (stored in a different namespace) as the character component system. I would call it the animation system, but calling it a system would be overstating it &#8211; it was just a collection of scripts, each script being the animation controller for a character.
+        </p>
+        <p>
+            Even though the scripts weren't directly connected, I designed the animation controllers to follow a hierarchy based on what character components were active.
+        </p>
+        <p>
+            The priority for characters animation were:
+        </p>
+        <ol>
+            <li>Attacks (highest)</li>
+            <li>Ability</li>
+            <li>Movement (lowest/default)</li>
+        </ol>
+        <p>
+            Characters were graphically represented as a single sprite, so this layered/priority system was necessary to choose the current sprite of the character. Attacks and abilities wouldn't be able to have conflict within themselves because those controllers forced a max of one attack/ability to be active at any given time. This didn't cause any issues for the artstyle (for me, anyways). The only real issue was that there was no graphical distinction between attacks done in the air versus on the ground, but that was more of a design choice that I kept as a quirk of the art.
+        </p>
+        <p>
+            (also because it would've been more effort to implement lol)
+        </p>
+    </details>
+
+[^attack_ability_conflicts]: <details>
+    <summary> boss ability conflicts </summary>
+    <p>
+        Because characters never actually activate abilities themselves, but instead request if an ability can be activated through their ability controller, it is technically possible for a boss's attack to partially fail if the ability they attempted to activate was denied (e.g., dash attack without the dash). I never implemented code to handle how any of the bosses would react, so if it occured, the boss would continue on as if nothing had happened.
+    </p>
+    <p>
+        Though technically possible, the two bosses that were implemented never had this issue, as abilities are almost always shorter than the length of an attack, so there was always enough time between abilities. This was also never an issue for enemies, as no enemies were implemented that used the character attack system.
+    </p>
+    </details>
 
 #### Galar -- The Vanguard Commander
 
