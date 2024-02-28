@@ -3,38 +3,36 @@ layout: home
 title: About
 permalink: /about/
 ---
-## introduction
 
-Hi, I'm Rovi Decena.
+Hi, I'm Rovi Decena! I'm a software developer that tends to have a lot of side projects running around.
 
-#### what is this?
+#### what is this
 
-A blog, I think.
+A blog.
 
-I like talking about stuff I do, and I thought it would be nice to be able to have it written down somewhere if I ever want to look back on it.
+I like talking about projects I'm working on. After enough time spent making long, rambly descriptions on YouTube, or bombarding my friends with development/minor details, I figured that a blog might be better as an outlet.
 
-For the most part, I'll usually just be talking about projects I'm working on, or have finished. Unless I have a career change, this'll almost be guarenteed to be:
+For the most part, I'll be posting about projects I'm working on, or have worked on -- behind the scenes, retrospectives, etc.
 
-- code
-- music
-- game dev (basically music and code plus design)
+My projects tend to revolve around these three topics:
 
-While I only started working on this blog for me, I'll try my best to make stuff understandable to a wide audience, even if I start delving into technical topics.
+- code (the main one)
+- music (secondary)
+- game dev (usually code + music)
 
-## technical details
+#### audience
 
-tl;dr: This blog was built using Jekyll.
+Because these posts are going to be (or are?) indepth regarding development details of my projects, they'll be getting pretty technical. I'll try my best to make stuff understandable to a wide audience, but still interesting for other programmers/musicians/developers.
 
-Originally, I was going to use React with Vite, but I immediately discovered that attempting to create a blog using React without any actual server/backend in place was easier said than done. (do not ask me why i tried doing that idk either).
+It's probably better to try and cater more to one, but I think there's a fun challenge in allowing everyone to understand my yapping.
 
-I didn't get very far with React, but my plans were to have markdown files stored in a folder, each .md file being a post. I also stored a CSV that acted as directory, storing the metadata of each file. Part of this metadata was the file path, which was how I was going to be able to dynamically load posts.
+#### technical details
 
-I spent several hours trying to jam this functionality before I gave up. I thought about making a database just because that's probably the most robust solution, but I gave up on that quickly after realizing I'd have to pay to store the database.
+- This blog was built using Jekyll, using a heavily modified version of the no-style-please theme.
+- The repository is hosted on GitHub.
+- There is no automatic build process. I build the files on Jekyll, then transfer the build to my website.
+    - I tried using GitHub Actions with their prebuilt Jekyll deployment thingy, but turns out there's issues with doing that because I wanted it to be hosted at `domain/blog` rather than `domain/`.
 
-It's a good thing I switched to Jekyll, because it quite literally has every bit of functionality I could need out of the box. I would've scrapped this whole blog otherwise.
-
-Could I have used React?
-
-Probably.
-
-It's not impossible or anything -- it would've been relatively easy to brute force it together, but I'd like to at least try and write decent code.
+bonus:
+- This blog was initially built using React + Vite. It did not go well, probably because I was trying to avoid having to actually make blog infrastrucutre, with a backend and database -- all that jazz.
+    - I didn't want to use WordPress because that's boring. Part of the fun with this was/is coding it.
