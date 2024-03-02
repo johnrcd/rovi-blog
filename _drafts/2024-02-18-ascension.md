@@ -2,7 +2,7 @@
 layout: post
 title:  "retrospective: ascension."
 date:   2024-02-18 14:49:00 -0600
-tags:   game_dev retrospective project music art code
+tags:   game_dev retrospective projects music art code
 
 description: the game that never was
 toc: true

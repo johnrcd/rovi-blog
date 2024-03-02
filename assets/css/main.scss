@@ -211,11 +211,14 @@ p.reversefootnote {
     overflow: hidden;
 }
 
-div.footnotes > ol {
-    list-style-position: outside;
-    padding-left: 1.2em; // found this on stack overflow somewhere
-}
+// div.footnotes {
+    
+// }
+    div.footnotes > ol {
+        list-style-position: outside;
+        padding-left: 1.2em; // found this on stack overflow somewhere
+    }
 
-div.footnotes > ol > li {
-    padding-left: 1em;
-}
+    div.footnotes > ol > li {
+        padding-left: 1em;
+    }
