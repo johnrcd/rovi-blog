@@ -115,7 +115,7 @@ There's a lot of composition differences in this one because the song had a dire
 
 For a final boss without an actual final boss to fight, I thought it was actually pretty good. The fact that the arena changed in sync with the music made it feel like a rhythm game, which I thought was funny.
 
-The most interesting part of this version is that the B section melodies got revamped to support the boss fight. The B section works by having two melodies go back and forth with eachother, but in order to make the arena rapidly change when the B section was playing, I cut the lengths of each melody by half, making each part change twice as fast.
+The most interesting part of this version is that the B section melodies got revamped to fit in with the boss fight. The B section works by having two melodies go back and forth with eachother, but in order to make the arena rapidly change when the B section was playing, I cut the lengths of each melody by half, making each part change twice as fast.
 
 Other than that, I suppose the main different thing is that the second and third A section in the second loop (totally not difficult to follow whoops) was cut. This was made during the development of the boss, as I didn't like how long it was getting.
 
@@ -125,8 +125,26 @@ In isolation, I think the B section absolutely pops, and with the context of the
 
 > Q: There's more???
 
-> A: yup    
+> A: yup
 
+As you play through Monospace, you gain new abilities. These abilities would always come in the transition between worlds, so you would be able to experiment with them right away in the main level, then have your skills tested in the world boss.
 
+- In the starting cave, you unlock the *Dash*
+- then you get the *Double Jump*,
+- then lastly, the *Wall Mount*.
 
+The Dash and Double Jump displayed this relatively straight-forward in their respective boss fights -- the Dash was a horizontal arena where you had to dash to avoid long sections of spikes, while the Double Jump was use extensively in a vertical arena that had you avoiding a rising pit of lava.
 
+The Wall Mount was never used to the same extent as the other movement abilities, which was mainly due to a (self-imposed) lack of time. The third/final world of Monospace was built during Slow Jam Winnipeg 2023, a month long game jam to start a new project you haven't had time to work on, or finish up a longer term project.
+
+The initial plans for the final boss were to have it split into segments -- the first segment would be the same boss fight, but when you would drop down at the end, you would be taken to a second, harder segment. This segment would be focused on an idea I've had for awhile: "A platformer without ground."
+
+I'm not exactly sure where I got this idea from, but it probably just comes from how the majority of platformers will have you slowly grow in movement power overtime. This progression almost always results in gameplay that makes you spend less time on "solid ground" -- giving you a double, triple, or even quadruple jump; temporary flight, dashing, all of that fun stuff.
+
+So, I figured -- what if you just keep the player in the air?
+
+The idea was never to remove the idea of "ground to step on," but moreso to make a platformer where there was this constant battle between being a safe position and being able to move. In the final boss, this would be shown by the second half of the fight taking place on a few floating walls, with spikes at the top and bottom so you couldn't step on them.
+
+Technically, your feet are on somewhere, and you're in a stable spot, but the reliability of this position was countered by the fact that you couldn't climb up and down the walls, leading to this situation where in order to reliably move, you kept having to pop into a more dangerous position (being above a bottomless pit) in order to move around.
+
+I was a big fan of this idea at the time -- and I still very much am -- but my skills weren't at the level where I could implement this in a way where it would be fun enough to serve as the climax to my game. Also, I didn't have much time to add it either, so the second part was scrapped.
