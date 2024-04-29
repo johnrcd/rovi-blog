@@ -10,9 +10,9 @@ The best way to contact me is through my [**email**](mailto:johnrcd.ar@gmail.com
 
 > johnrcd.ar@gmail.com
 
-If you'd like to see some of my work, you can check out my [**portfolio**](https://rovidecena.com/portfolio/):
+If you'd like to see some of my work, you can check out my [**portfolio**](https://rovidecena.com):
 
-> https://rovidecena.com/portfolio/
+> https://rovidecena.com
 
 ### socials
 
