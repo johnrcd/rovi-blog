@@ -6,7 +6,7 @@ tags:   behind_the_scenes projects music
 
 description: "definition: &quot;the state of being unaware or informed&quot;"
 toc: true
-# date_edited: 2024-03-02 1:30:00 -0600
+date_edited: 2024-4-29 23:29:00 -0600
 ---
 
 <!-- table of contents hack -->
@@ -40,7 +40,7 @@ I'm not really sure how I should talk about this album, but I suppose going thro
 
 ### 01. petals must fall
 
-Pedals Must Fall was one of the first songs I made for this album (*the* first if we ignore the attempts beforehand), and it's probably one of my favourites. It has a lot of qualities I think made it a good first track -- the lobsided rhythm of the initial synth, the low-cut noise + the bubble pop sound effects in the background, and the sad string bend around ten seconds in give a good hook to get you invested.
+Petals Must Fall was one of the first songs I made for this album (*the* first if we ignore the attempts beforehand), and it's probably one of my favourites. It has a lot of qualities I think made it a good first track -- the lobsided rhythm of the initial synth, the low-cut noise + the bubble pop sound effects in the background, and the sad string bend around ten seconds in give a good hook to get you invested.
 
 There's a melody that plays for the second and third part of the song, but it's not a melody in the way I'd normally try and make one. It's catchy, but not in a way where you'd sing it. I think it adds to the (pondering?) vibe of the song.
 

@@ -12,9 +12,7 @@ Probably too much.
 
 A blog.
 
-I like talking about projects I'm working on. After enough time spent making long, rambly descriptions on YouTube, or bombarding my friends with development details, I figured that a blog might be a better outlet.
-
-For the most part, I'll be posting about projects I'm working on, or have worked on -- behind the scenes, retrospectives, etc.
+After enough time spent making long, rambly descriptions on YouTube, or bombarding my friends with development details, I figured that a blog might be a better outlet. For the most part, I'll be posting about stuff I'm working on, or have worked on -- behind the scenes, retrospectives, etc.
 
 My projects tend to revolve around these three topics:
 
@@ -22,11 +20,13 @@ My projects tend to revolve around these three topics:
 - music (secondary)
 - game dev (usually code + music)
 
+Not to say that I'll only be talking about this stuff... but I'll probably only be talking about this stuff.
+
 ## audience
 
-I'll try my best to make stuff understandable to a wide audience, but still interesting to other programmers/musicians/developers. 
+While the majority of the posts here will be technical by at least some amount, I'll try to make everything understandable to a general audience.
 
-It's probably better to try and cater more to one, but I think cool for anyone to be able to read my blog stuff.
+Of course, this isn't always possible, especially when I start getting into the technical details of work I've done, but y'know -- it's always worth trying. If something gets too technical to reasonably simplify, I'll probably let you know directly.
 
 ## technical details
 
@@ -52,16 +52,18 @@ Okay, here's some information about how the site works; how I code and do music,
 - I write posts in _drafts, but occasionally I'll use Google Docs if I want to write when I'm not at home.
     - I find that editing a markdown file directly helps me stay focused. I write for less, sure, but it's consistant.
 
-### music!
+## music stuff
 
 - I produce music using Waveform Free.
     - Yes, I am using the free version of a paid DAW.
 - I've used two other DAW's:
     - started off with Soundtrap (browser-based),
     - tried Ableton Live for ninety days when they hosted their free trial
-- TECHNICALLY, I've tried FL Studio, but I think the workflow is awkward.
-    - The only exception for that is automation clips; they look super useful. I wish Waveform had them!
-- My music education is middle school and high school guitar classes.
+- TECHNICALLY, I've tried FL Studio, but only for like ten minutes.
+    - Personally, I thought the workflow was too awkward to really get into.
+    - The only exception for that is automation clips; they look super useful. I wish Waveform had them! (Ableton Live didn't have them either...)
+- My music education is limited to basic guitar classes in my middle and high school.
+    - After a certain point, I taught myself how to play fingerstyle, then percussive.
 - Vital is my main, general-purpose synthesizer. I basically don't use anything else.
     - Previously, I used Synth1, but I like Vital because it has nicer visuals that appeal to my brain.
 - Other than Vital, I use these for sound making:

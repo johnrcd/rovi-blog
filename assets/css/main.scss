@@ -164,10 +164,14 @@ ul#post_list {
     list-style-type: none;
     padding: 0;
 }
-    ul#post_list li:not(:last-child){
+    ul#post_list li {
         padding: 10px 0;
         margin: 0;
         border-bottom: 2px solid rgb(51, 51, 51);
+    }
+
+    ul#post_list li:last-child {
+        border-bottom: none;
     }
     ul#post_list li h3,
     ul#post_list li p,
