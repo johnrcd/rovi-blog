@@ -10,7 +10,7 @@ date_edited: 2024-04-13 14:35:00 -0600
 ---
 
 <!-- table of contents hack -->
-<h2 style="color:transparent; font-size:1;">(top of post)</h2>
+<h2 style="color:transparent; font-size:1px; line-height:0;">(top of post)</h2>
 
 ## megalovania??
 
