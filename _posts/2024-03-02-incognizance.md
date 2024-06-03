@@ -16,11 +16,19 @@ date_edited: 2024-4-29 23:29:00 -0600
 
 "*incognizance*" is the name of an experimental (well, for me at least) album I worked on. There's seven tracks in there, but each track is relatively short, and the entire album is under 15 minutes. You don't have to listen to it before reading this, but I mean... music?
 
-At the time of writing, the album isn't fully out. It'll be released on the 14th of March, 2024, but I wanted to yap about the songs so here we are. I did a quiet release on Bandcamp which you can check out [here](https://johnrcd.bandcamp.com/album/incognizance).
+The album was released on March 14 2024. You can check it out [here](https://johnrcd.bandcamp.com/album/incognizance).
 
-> NOTE: The official spelling for the album and song names are all in lowercase, but I capitilize them because I think it's more intuitive for reading.
+> https://johnrcd.bandcamp.com/album/incognizance
 
-> Except for the first sentence, because, uh --
+It's also out on a bunch of music streaming services[^streaming_services], like [Spotify](https://open.spotify.com/album/7oTYKf5qE5Hl3GvA2viK3I?si=UIEceTM5T8KAIuFycSZg0A).
+
+> https://open.spotify.com/album/7oTYKf5qE5Hl3GvA2viK3I?si=UIEceTM5T8KAIuFycSZg0A
+
+**NOTE:** The official spelling for the album and song names are all in lowercase, but I capitilize them because I think it's more intuitive for reading.
+
+Except for the first sentence, because, uh --
+
+[^streaming_services]: "a bunch of music streaming services" is just all the platforms that DistroKid provides. The main ones (determined by DistroKid) are Spotify, Apple Music, TikTok, Pandora, Amazon, Instagram, YouTube, Tidal, iHeartRadio, and Deezer.
 
 ## inspiration
 
