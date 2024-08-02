@@ -63,4 +63,12 @@ kramdown:
   footnote_backlink: ""
   footnote_backlink_inline: true
 
+collections:
+  posts:
+    output: true
+    permalink: /posts/:title/
+  drafts:
+    output: true
+    permalink: /drafts/:title/
+
 
