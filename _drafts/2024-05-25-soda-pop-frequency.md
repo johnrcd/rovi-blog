@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "soda pop frequency"
+title:  "Soda Pop Frequency"
 date:   2024-05-16 14:38:00 -0600
 tags:   game_idea game_dev
 
-description: "behind the scenes on my happy percussive music album thing"
+description: "happy percussive music album thing"
 toc: true
 # date_edited: 2024-04-13 14:35:00 -0600
 ---

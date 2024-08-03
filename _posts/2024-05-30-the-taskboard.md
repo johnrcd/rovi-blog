@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "the taskboard"
+title:  "The Taskboard"
 date:   2024-06-02 14:38:00 -0600
 tags:   web_dev projects code
 
