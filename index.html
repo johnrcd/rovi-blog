@@ -9,14 +9,12 @@ permalink:
 {% if site.posts.size > 0 %}
   <ul id="post_list">
     {% for post in site.posts %}
-      {% if post.hidden == null or post.hidden == false %}
         <li class="post_infobox">
           <a href="{{ site.baseurl }}{{ post.url }}"><h3>{{ post.title }}</h3></a>
           <p class="post_description"> {{ post.description }}</p>
           <p> {{ post.date | date: site.theme_config.date_format }} </p>
         </li>
         <div style="display: none;">{% increment posts_displayed %}</div> 
-      {% endif %}
       {% if posts_displayed == 4 %}
         {% break %}
       {% endif %}

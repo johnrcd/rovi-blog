@@ -1,7 +1,5 @@
 # to run prod enviornment, run:
 # jekyll build
-# you shouldn't need to do this; github actions should handle this
-# unless you have a baseurl like i do (i hate it here)
 
 title: rovi_blog
 email: johnrcd.ar@gmail.com
