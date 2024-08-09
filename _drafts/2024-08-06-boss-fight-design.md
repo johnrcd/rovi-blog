@@ -1,15 +1,20 @@
 ---
 layout: post
-title:  "Boss Fight Design"
+title:  "boss fight design"
 date:   2024-8-3 16:18:00 -0600
 tags:   game_dev retrospective projects music art code
 
 description: "me talking about boss design incoherently"
-toc: true
 date_edited: 2024-8-3 21:06:00 -0600
 ---
+<!-- table of contents hack -->
+<h2 style="color:transparent; font-size:1px;">(top of post)</h2>
 
-talking about boss fighting
+Boss fights are cool, and I want an excuse to talk about them, so here we are.[^post_reason]
+
+[^post_reason]: I like boss fights, don't get me wrong, but the predominant reason I made this post in the first place was so I could have a post that wasn't just one of my projects. (The first two posts don't count -- I was just filling in space.)
+
+## why boss fights???
 
 ## boss that can attack minions
 
@@ -27,7 +32,7 @@ There's probably a ton of ways to mitigate this problem, but in my infinite wisd
 
 What if boss attacks also hit regular enemies?
 
-#### what
+#### boring technical details of combat system
 
 Within the game's combat system, every character is assigned a team. In other games, a team can usually be represented with something like a whole number, because the only thing that really matters when validating an attack is making sure that the teams don't match when an attack is detected. Ascension is different because I wanted "one-sided attacking" -- where one team can attack the other, but not the other way around.
 
@@ -50,3 +55,7 @@ Player and Ally can be thought of as being on the same "team", along with Boss a
 > Q: Why is there an ally team?
 
 > A: Mostly for balance -- it felt weird that bosses could have allies they can hit but not the player. I got the idea from a weapon idea I had from a different game, where one of your companions was a flying fire ball of sorts that could be thwacked to deal damage to enemies.
+
+<hr />
+
+## footnotes

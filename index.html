@@ -3,6 +3,29 @@ layout: home
 title: Home
 permalink: 
 ---
+<p>Hi, I'm Rovi Decena!</p>
+<p>
+    This is my blog. I predominantly talk about my projects – normally
+    programming, game development, or music related.
+</p>
+<ul>
+    <li>
+        If you'd like to hear more random stuff about me, you can check out
+        the <a href="{{ site.baseurl }}{{ post.url }}/about/">about</a> page.
+    </li>
+    <li>
+        If you'd like to change the colour<a href="{{ site.baseurl }}{{ post.url }}/#colour">¹</a>
+        palette of the website, you can check out the
+        themes<a href="{{ site.baseurl }}{{ post.url }}/#themes">²</a> page.
+    </li>
+    <li>
+        If you'd like to actually read the blog and get past this unnecessarily
+        placed introduction/landing section, you can look below to see the
+        latest posts.
+    </li>
+</ul>
+
+<h2>latest</h2>
 
 <div style="display: none;">{% increment posts_displayed %}</div> 
 
@@ -23,3 +46,17 @@ permalink:
 {% endif %}
 
 <a href="{{ site.baseurl }}{{ post.url }}/posts">see all posts</a>
+
+<h2>footnotes</h2>
+
+<div class="footnotes">
+    <ol>
+        <li id="colour">
+            Colour > color. CSS has failed me.
+        </li>
+        <li id="themes">
+            Themes page is a planned feature. You should yell at me if I
+            haven't implemented this yet.
+        </li>
+    </ol>
+</div>
