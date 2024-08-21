@@ -14,7 +14,25 @@ Boss fights are cool, and I want an excuse to talk about them, so here we are.[^
 
 [^post_reason]: I like boss fights, don't get me wrong, but the predominant reason I made this post in the first place was so I could have a post that wasn't just one of my projects. (The first two posts don't count -- I was just filling in space.)
 
-## why boss fights???
+## why boss fights
+
+A lot of my enjoyment from video games comes from having to face bosses. In many games, boss fights represent difficulty spikes that players must overcome. Because of this, they act as the "emotional high" in a game, manifesting in two forms
+
+- Overcoming challenge -- bosses are cool because it meant I was able to do something hard
+- Narritive growth -- bosses are cool because they fit very well into the story.
+
+
+## good boss fights
+
+
+This can be interpreted through the boss's difficulty, with the satisfaction of overcoming a challenge
+
+Boss fights in a lot of games often represent difficulty spikes players must overcome. They often come with unique set-pieces/actions that must be learned solely for the boss fight, and test your skills in the game. A good boss fight may be able to be beaten in one go, but it takes more to master it.
+
+
+## bad boss fights
+
+
 
 ## boss that can attack minions
 
