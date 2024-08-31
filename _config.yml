@@ -60,6 +60,8 @@ toc:
 kramdown:
   footnote_backlink: ""
   footnote_backlink_inline: true
+  highlighter: rouge
+  input: GFM
 
 collections:
   posts:

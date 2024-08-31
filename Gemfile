@@ -38,3 +38,5 @@ gem "jekyll-seo-tag"
 
 # https://heymichellemac.com/table-of-contents-jekyll
 gem 'jekyll-toc'
+
+gem "rouge", "~> 4.2.0"
