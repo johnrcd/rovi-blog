@@ -10,33 +10,35 @@ toc: true
 # date_edited: 2024-02-07 19:06:00 -0600
 ---
 
+(This is just context; if you only want the tutorial, just scroll down to "tutorial time").
+
+When I upgraded my portfolio website from version 2 to 3, I was focused on keeping things simple.
+
+Version 2 was styled with lots of empty space and a focus on flair -- I divided the website into screens, where first you'd see by name (and a small intro) in a big font, then down to who I was, then what I've done, then contact.
 
 
-For websites
 
-During the summer, I overhauled my portfolio website. Version 2 (the previous design) of my website was focused on style -- a small amount of content with a large amount of flair. When I wrote that code, I thought it was pretty cool (and I still do!), but if you simply want to know *who* I am, and what I can do as a software developer, it wasn't super helpful.
 
-So, I wanted to change that.
-
-I spent a week quickly making the new design -- focused on simplicitiy, compactness, and all the information.
-
-This overhaul was all thanks to Johans, who proceeded to call my website "mid" which made me spend a bunch of time overhauling it
 
 ## tutorial time
 
-This tutorial will be demonstrated with the most barebones code possible, written for a single-page static website.
+This tutorial will make a barebones application just to see how the theme functionality is implemented. You could probably do it in an existing project -- up to you.
 
-Recommended that you start a new project.
+### setup
 
-There's three files you'll need to juggle between:
+There's three files you'll need to have:
 
 - `index.html`
 - `styles.css`
 - `palettes.js`
 
-Recommended that they're all in the same folder, but they don't technically have to be.
+Create them all in the same folder.
 
-Your page can have whatever content you like -- slap on an unordered list, a few header tags; doesn't really matter. Just have something.
+#### `index.html`
+
+Add stuff to your `index.html` so you can see what happens when you change your CSS.
+
+You can have whatever content you like -- slap on an unordered list, a few header tags; doesn't really matter. Just have something.
 
 ```html
 <html lang="en">
@@ -46,23 +48,22 @@ Your page can have whatever content you like -- slap on an unordered list, a few
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Content goes here... -->
+  <h1>welcome to my website!!!</h1>
+  <h2>favourite overwatch characters</h2>
+  <ul>
+    <li>rein</li>
+    <li>juno</li>
+    <li>ana</li>
+    <li>sigma</li>
+  </ul>
+  <p>no criticism allowed</p>
   <script src="palettes.js"></script>
 </body>
 ```
 
-### choose your complexity
+#### `styles.css`
 
-First things first -- how powerful do you want these themes to be?
-
-The reason why this is a *theme* tutorial and not a *colour palette* tutorial is that you can completely redesign a website if you want to. For my portfolio website, I initially wanted to just have a simple colour palette as a fun little bonus, but I ended up having over a dozen of different variables that a theme could tweak.
-
-It's up to you how much you want each theme to stand out, but you can always start basic, and scale it up as you develop the website.
-
-For this tutorial, I'll be using three different CSS variables.
-- `font-family`,
-- `color`,
-- and `background-color`.
+We'll be using CSS variables (custom properties) to define our initial styling, storing everything inside `:root`[^root_css]
 
 ```css
 :root {
@@ -70,9 +71,26 @@ For this tutorial, I'll be using three different CSS variables.
   --color-text: #FFFFFF;
   --color-bg: rgba(6,16,24,1);
 }
+
+body {
+  background: var(--color-bg);
+}
+
+h1, h2, li, p, {
+  font-family: var(--font-family);
+  color: var(--color-text);
+}
 ```
 
-Slap them into the `:root:` psuedo-class, as it'll be available to be used for your CSS.
+[^root_css]: The `:root` element represents the root of the document, which is always the `html` element. It's used to store CSS variables as it's the "highest" scope in the document, allowing everything else to access them. (The variables *cascade* down? I think that's correct?)
+
+It's worth noting that once the theme functionality has been implemented, these values are intended to be fully overridden when the page is loaded. I would just set these as whatever default look you want your website to have, then implement that in the theme system later on.
+
+Probably not really needed, but I suppose it would useful if someone had JavaScript disabled (and wouldn't be able to load any themes).
+
+#### `palettes.js`
+
+Create the file.
 
 ### theme storage and retrieval
 
@@ -98,11 +116,9 @@ const themes = {
 }
 ```
 
-If you're just trying to get this to work, and you want to try using your own custom colours right away, just have one theme. You can add more later.
+Having our `themes` dictionary is all nice and well, but we actually need a way to *use* it.
 
-These values don't mean anything by themselves -- we'll need a way of using these themes and directly updating the page styling with them. We'll need to access the `:root` element, as that's where our variables are stored. 
-
-Let's implement this functionality into a function called `setTheme`:
+Create a function that takes a string representing a key from the `themes` dictionary, then set the CSS variables defined within `:root`.
 
 ```javascript
 const setTheme = (theme) => {
@@ -115,11 +131,11 @@ const setTheme = (theme) => {
 };
 ```
 
+### swapping themes
+
 We have themes, and a way to set them, but *when* do we set them?
 
-The easiest option is whenever you load the page, so let's do that first.
-
-Put this code at the top of your JavaScript file:
+The easiest option is whenever you load the page, so let's do that first. Call the `setTheme` function when the page is fully loaded:
 
 ```javascript
 addEventListener("DOMContentLoaded", () => {
@@ -127,25 +143,17 @@ addEventListener("DOMContentLoaded", () => {
 });
 ```
 
-Nice, so now we can see the themes! If you change the string, you'll be able to see how your themes look.
+This code can go anywhere, but I would personally put it at the top of the JavaScript file.
 
-### swapping themes
+If you change the argument value, you'll be able to see how your themes look. This is fine for bug testing, but there's still no way to switch the theme as a regular user.
 
-It's nice that we're able to edit the theme by changing what loads when the website refreshes, but that's not ideal for an end user, is it? We need to implement a system to allow visitors to change the site at the click of a button.
-
-...so we'll need some buttons.
+We'll add some buttons to choose between the different themes.
 
 ```html
 <button id="theme_midnight">midnight</button>
 <button id="theme_terminal">terminal</button>
 <button id="theme_sunset"  >sunset  </button>
 ```
-
-In your HTML file, add some buttons; one for each theme you have.
-
-My example has all the themes prefixed with the string `theme_`, but that's up to you whether you want to do that -- I just felt weird not doing that given how all my theme names were regular words.
-
---
 
 Update your `DOMContentLoaded` handler to have `click` event listeners for each theme button. In each handler, set the theme accordingly.
 
@@ -194,7 +202,7 @@ const setTheme = (theme) => {
 };
 ```
 
-Then, update your `DOMContentLoaded` handler to load a theme.
+Then, update your `DOMContentLoaded` handler to load from local storage, then set the theme with the value retrieved.
 
 ```javascript
 addEventListener("DOMContentLoaded", () => {
@@ -208,8 +216,99 @@ addEventListener("DOMContentLoaded", () => {
 });
 ```
 
-`themeOnLoad` will equal `"midnight"` if `getItem("theme_on_load")` is falsy, (which it *will* be if `getItem` returns `""`). This makes `midnight` the default theme.
+> NOTE: I'm using a trick where `themeOnLoad` will be set to a default value (`"midnight"`) if the local storage value is falsy. If the user has never clicked a button, `getItem("theme_on_load")` will return null, which is considered a falsy value, setting `themeOnLoad` to `"midnight"`.
 
+If you've finished implementing that, your themes should be working!
+
+## considerations
+
+Themes are relatively trivial to implement if you're just changing a few colours, but you can effectively modify *any* CSS property, granted that you have a CSS variable for it. It's already hard enough trying to your website look good with *one* theme, so the complexity scales up a lot more with a bunch to manage.
+
+I have a portfolio website with multiple themes, and they're pretty ridiculous:
+
+```javascript
+const themes = {
+  "midnight": {
+    "fontFamily"       : '"Manrope", "Poppins", "Open Sans", sans-serif',
+    "colorTextTitle"   : "#EEEEEE",
+    "colorTextHeader"  : "#B9E7E9",
+    "colorTextSupport" : "#85A7A8",
+    "colorText"        : "#C2C7C7",
+    "svgFilter"        : "invert(97%) sepia(3%) " +
+                         "saturate(54%) hue-rotate(165deg) " +
+                         "brightness(116%) contrast(76%)",
+    "colorBg"          : "linear-gradient(233deg, " +
+                         "rgba(1,2,8,1) 0%, " +
+                         "rgba(4,14,24,1) 11%, " +
+                         "rgba(5,17,19,1) 33%, " +
+                         "rgba(6,16,24,1) 48%, " +
+                         "rgba(6,12,20,1) 67%, " +
+                         "rgba(6,9,22,1) 87%, " + 
+                         "rgba(3,9,22,1) 100%)",
+    "colorBgHeader"    : "rgba(0, 0, 0, 0)",
+    "glassBg"          : "rgba(255, 255, 255, 0.02)",
+    "selectionText"    : "#000000",
+    "selectionBg"      : "rgb(122, 255, 252)",
+    "particleOptions"  : {
+      selector: '.background',
+      color: "#1d3243",
+      connectParticles: true,
+      speed: 0.1,
+      maxParticles: 100,
+      minDistance: 120,
+      responsive: [
+        {
+          breakpoint: 1200,
+          options: {
+            maxParticles: 100,
+          },
+        },
+        {
+          breakpoint: 768,
+          options: {
+            maxParticles: 40,
+          },
+        },
+        {
+          breakpoint: 576,
+          options: {
+            maxParticles: 0,
+          },
+        },
+      ],
+      }
+  },
+// ... other themes omitted ...
+}
+```
+
+And that's just *one* theme.
+
+Q: What is `particleOptions`?
+
+A: I have cool particles generated in the background of my page. It acts as a config file between the different themes.
+
+Q: `particleOptions` isn't a CSS property.
+
+A: *True,* but it *is* used different across different themes. That's sort of my whole point -- the complexity of your website design goes up with each new property you want to be able to modify. Once you start modifying layout is when things start becoming awkward.
+
+For anything beyond having a few colour swaps, or even just a dark/light theme, themes are mostly a pain.
+
+But, y'know -- they're super cool. So I like them.
+
+## demonstration
+
+If you want to see my portfolio in action, you can check it out here:
+
+<https://rovidecena.com/>
+
+If you don't care about the animations and just want to see the styles, here are some images:
+
+
+
+<hr />
+
+## footnotes
 
 
 
